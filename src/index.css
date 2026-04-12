@@ -23,3 +23,63 @@ body {
 #root {
   min-height: 100vh;
 }
+
+@keyframes fade-slide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-pulse {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0.15;
+  }
+
+  50% {
+    transform: translateX(130%);
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: translateX(130%);
+    opacity: 0.2;
+  }
+}
+
+@layer utilities {
+  .animate-fade-slide {
+    animation: fade-slide 320ms ease-out both;
+  }
+
+  .animate-soft-pulse {
+    animation: soft-pulse 1.1s ease-in-out infinite;
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-color: rgba(100, 116, 139, 0.6);
+  background-clip: padding-box;
+}

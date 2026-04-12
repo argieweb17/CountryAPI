@@ -26,10 +26,12 @@ function CountryDetails({ country, onBorderClick, isLoading }) {
   if (isLoading) {
     return (
       <article
-        className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+        className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 p-6 shadow-lg shadow-slate-200/45"
         role="status"
         aria-label="Loading country details"
       >
+        <div className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-cyan-100/45 blur-2xl" />
+
         <div className="grid gap-6 md:grid-cols-[1.2fr_1fr]">
           <div className="space-y-3">
             <div className="h-3 w-28 animate-pulse rounded bg-slate-200/80" />
@@ -56,7 +58,7 @@ function CountryDetails({ country, onBorderClick, isLoading }) {
 
   if (!country) {
     return (
-      <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <article className="rounded-3xl border border-slate-200/90 bg-white/95 p-6 shadow-lg shadow-slate-200/45">
         <p className="text-sm font-medium text-slate-600">
           Select a country to view full details.
         </p>
@@ -65,7 +67,10 @@ function CountryDetails({ country, onBorderClick, isLoading }) {
   }
 
   return (
-    <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 ease-out">
+    <article className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 p-6 shadow-lg shadow-slate-200/45 transition-all duration-200 ease-out">
+      <div className="pointer-events-none absolute -right-14 -top-12 h-44 w-44 rounded-full bg-emerald-100/45 blur-3xl" />
+      <div className="pointer-events-none absolute -left-10 bottom-0 h-40 w-40 rounded-full bg-sky-100/35 blur-3xl" />
+
       <div className="grid gap-6 md:grid-cols-[1.2fr_1fr]">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
@@ -75,8 +80,17 @@ function CountryDetails({ country, onBorderClick, isLoading }) {
             {country.name || 'Unknown'}
           </h2>
 
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-600">
+              {country.region || 'N/A'}
+            </span>
+            <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-600">
+              {country.subregion || 'Subregion N/A'}
+            </span>
+          </div>
+
           <dl className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div>
+            <div className="rounded-xl border border-slate-200/80 bg-white/75 p-3 transition-transform duration-200 hover:-translate-y-0.5">
               <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                 Capital
               </dt>
@@ -85,7 +99,7 @@ function CountryDetails({ country, onBorderClick, isLoading }) {
               </dd>
             </div>
 
-            <div>
+            <div className="rounded-xl border border-slate-200/80 bg-white/75 p-3 transition-transform duration-200 hover:-translate-y-0.5">
               <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                 Region / Subregion
               </dt>
@@ -94,7 +108,7 @@ function CountryDetails({ country, onBorderClick, isLoading }) {
               </dd>
             </div>
 
-            <div>
+            <div className="rounded-xl border border-slate-200/80 bg-white/75 p-3 transition-transform duration-200 hover:-translate-y-0.5">
               <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                 Population
               </dt>
@@ -103,7 +117,7 @@ function CountryDetails({ country, onBorderClick, isLoading }) {
               </dd>
             </div>
 
-            <div>
+            <div className="rounded-xl border border-slate-200/80 bg-white/75 p-3 transition-transform duration-200 hover:-translate-y-0.5">
               <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                 Area (km2)
               </dt>
@@ -112,7 +126,7 @@ function CountryDetails({ country, onBorderClick, isLoading }) {
               </dd>
             </div>
 
-            <div>
+            <div className="rounded-xl border border-slate-200/80 bg-white/75 p-3 transition-transform duration-200 hover:-translate-y-0.5">
               <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                 Coordinates
               </dt>
@@ -121,7 +135,7 @@ function CountryDetails({ country, onBorderClick, isLoading }) {
               </dd>
             </div>
 
-            <div>
+            <div className="rounded-xl border border-slate-200/80 bg-white/75 p-3 transition-transform duration-200 hover:-translate-y-0.5">
               <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                 Currency
               </dt>
@@ -130,7 +144,7 @@ function CountryDetails({ country, onBorderClick, isLoading }) {
               </dd>
             </div>
 
-            <div>
+            <div className="rounded-xl border border-slate-200/80 bg-white/75 p-3 transition-transform duration-200 hover:-translate-y-0.5">
               <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                 Timezones
               </dt>
@@ -141,7 +155,7 @@ function CountryDetails({ country, onBorderClick, isLoading }) {
               </dd>
             </div>
 
-            <div>
+            <div className="rounded-xl border border-slate-200/80 bg-white/75 p-3 transition-transform duration-200 hover:-translate-y-0.5">
               <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                 Languages
               </dt>
