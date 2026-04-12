@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { applyRipple } from '../utils/ripple'
 
 const ROW_HEIGHT = 48
 const OVERSCAN_COUNT = 6
@@ -97,7 +98,7 @@ function VirtualizedCountryList({
       tabIndex={0}
       role="listbox"
       aria-label="Countries"
-      className="overflow-auto rounded-2xl border border-slate-200 bg-slate-50/50 p-1 pr-1 shadow-inner outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+      className="overflow-auto rounded-2xl border border-slate-200 bg-slate-50/50 p-1 pr-1 shadow-inner outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-900/50 dark:focus:border-teal-400 dark:focus:ring-teal-950/60"
       style={{ height }}
     >
       <div style={{ height: totalRows * ROW_HEIGHT, position: 'relative' }}>
@@ -111,13 +112,14 @@ function VirtualizedCountryList({
               key={country.name}
               type="button"
               onClick={() => onSelect(country.name)}
+              onPointerDown={applyRipple}
               role="option"
               aria-selected={isActive}
               className={[
-                'absolute left-0 right-0 rounded-xl border px-3 py-2 text-left text-sm font-medium transition-all duration-200',
+                'absolute left-0 right-0 isolate overflow-hidden rounded-xl border px-3 py-2 text-left text-sm font-medium transition-all duration-200',
                 isActive
-                  ? 'border-slate-900 bg-slate-900 text-white shadow-md shadow-slate-300/40'
-                  : 'border-slate-200 bg-white text-slate-700 hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-sm',
+                  ? 'border-slate-900 bg-slate-900 text-white shadow-md shadow-slate-300/40 dark:border-teal-300 dark:bg-teal-500/20 dark:text-teal-50 dark:shadow-teal-950/60'
+                  : 'border-slate-200 bg-white text-slate-700 hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-white',
               ].join(' ')}
               style={{
                 top,
@@ -134,8 +136,8 @@ function VirtualizedCountryList({
                     className={[
                       'rounded-md px-2 py-0.5 text-[11px] font-semibold',
                       isActive
-                        ? 'bg-white/20 text-white'
-                        : 'bg-slate-100 text-slate-500',
+                        ? 'bg-white/20 text-white dark:bg-white/15'
+                        : 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400',
                     ].join(' ')}
                   >
                     {country.region}
