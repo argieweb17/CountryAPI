@@ -98,7 +98,7 @@ function VirtualizedCountryList({
       tabIndex={0}
       role="listbox"
       aria-label="Countries"
-      className="overflow-auto rounded-2xl border border-slate-200 bg-slate-50/50 p-1 pr-1 shadow-inner outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-900/50 dark:focus:border-teal-400 dark:focus:ring-teal-950/60"
+      className="overflow-auto rounded-2xl bg-slate-50/50 p-1 pr-1 shadow-inner outline-none transition focus:ring-2 focus:ring-slate-200 dark:bg-slate-900/50 dark:focus:ring-teal-950/60"
       style={{ height }}
     >
       <div style={{ height: totalRows * ROW_HEIGHT, position: 'relative' }}>
@@ -116,10 +116,10 @@ function VirtualizedCountryList({
               role="option"
               aria-selected={isActive}
               className={[
-                'absolute left-0 right-0 isolate overflow-hidden rounded-xl border px-3 py-2 text-left text-sm font-medium transition-all duration-200',
+                'absolute left-0 right-0 isolate overflow-hidden rounded-xl px-3 py-2 text-left text-sm font-medium transition-all duration-200',
                 isActive
-                  ? 'border-slate-900 bg-slate-900 text-white shadow-md shadow-slate-300/40 dark:border-teal-300 dark:bg-teal-500/20 dark:text-teal-50 dark:shadow-teal-950/60'
-                  : 'border-slate-200 bg-white text-slate-700 hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-white',
+                  ? 'bg-slate-900 text-white shadow-md shadow-slate-300/40 dark:bg-teal-500/20 dark:text-teal-50 dark:shadow-teal-950/60'
+                  : 'bg-white text-slate-700 hover:-translate-y-0.5 hover:shadow-sm dark:bg-slate-900 dark:text-slate-200 dark:hover:text-white',
               ].join(' ')}
               style={{
                 top,

@@ -35,13 +35,13 @@ function Header({ theme, onToggleTheme }) {
         </p>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          <span className="rounded-full border border-slate-200 bg-white/85 px-3 py-1 text-xs font-semibold text-slate-600 shadow-sm transition-transform duration-200 hover:-translate-y-0.5 dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-300">
+          <span className="rounded-full px-3 py-1 text-xs font-semibold text-slate-600 transition-transform duration-200 hover:-translate-y-0.5 dark:text-slate-300">
             Live API
           </span>
-          <span className="rounded-full border border-slate-200 bg-white/85 px-3 py-1 text-xs font-semibold text-slate-600 shadow-sm transition-transform duration-200 hover:-translate-y-0.5 dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-300">
+          <span className="rounded-full px-3 py-1 text-xs font-semibold text-slate-600 transition-transform duration-200 hover:-translate-y-0.5 dark:text-slate-300">
             Debounced Search
           </span>
-          <span className="rounded-full border border-slate-200 bg-white/85 px-3 py-1 text-xs font-semibold text-slate-600 shadow-sm transition-transform duration-200 hover:-translate-y-0.5 dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-300">
+          <span className="rounded-full px-3 py-1 text-xs font-semibold text-slate-600 transition-transform duration-200 hover:-translate-y-0.5 dark:text-slate-300">
             Virtualized List
           </span>
         </div>

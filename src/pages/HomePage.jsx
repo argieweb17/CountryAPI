@@ -152,7 +152,7 @@ function HomePage() {
           </div>
 
           <div className="grid gap-4 md:grid-cols-3">
-            <label className="block rounded-2xl border border-slate-200 bg-white/90 p-3 transition-all duration-200 focus-within:-translate-y-0.5 focus-within:border-slate-400 focus-within:shadow-md focus-within:shadow-slate-200/70 dark:border-slate-700 dark:bg-slate-800/80 dark:focus-within:border-teal-400 dark:focus-within:shadow-teal-950/60">
+            <label className="block rounded-2xl p-3 transition-transform duration-200 focus-within:-translate-y-0.5">
               <span className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 Search Country
               </span>
@@ -173,7 +173,7 @@ function HomePage() {
               </span>
             </label>
 
-            <label className="block rounded-2xl border border-slate-200 bg-white/90 p-3 transition-all duration-200 focus-within:-translate-y-0.5 focus-within:border-slate-400 focus-within:shadow-md focus-within:shadow-slate-200/70 dark:border-slate-700 dark:bg-slate-800/80 dark:focus-within:border-teal-400 dark:focus-within:shadow-teal-950/60">
+            <label className="block rounded-2xl p-3 transition-transform duration-200 focus-within:-translate-y-0.5">
               <span className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 Filter Region
               </span>
@@ -190,7 +190,7 @@ function HomePage() {
               </select>
             </label>
 
-            <label className="block rounded-2xl border border-slate-200 bg-white/90 p-3 transition-all duration-200 focus-within:-translate-y-0.5 focus-within:border-slate-400 focus-within:shadow-md focus-within:shadow-slate-200/70 dark:border-slate-700 dark:bg-slate-800/80 dark:focus-within:border-teal-400 dark:focus-within:shadow-teal-950/60">
+            <label className="block rounded-2xl p-3 transition-transform duration-200 focus-within:-translate-y-0.5">
               <span className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 Filter Population
               </span>
@@ -209,14 +209,14 @@ function HomePage() {
           </div>
 
           <div className="mt-4 flex flex-wrap gap-2 text-xs">
-            <span className="rounded-full border border-slate-200 bg-white px-3 py-1 font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+            <span className="rounded-full px-3 py-1 font-semibold text-slate-700 dark:text-slate-200">
               {countries.length} countries loaded
             </span>
-            <span className="rounded-full border border-slate-200 bg-white px-3 py-1 font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+            <span className="rounded-full px-3 py-1 font-semibold text-slate-700 dark:text-slate-200">
               {filteredCountries.length} in results
             </span>
             {selectedCountryName ? (
-              <span className="rounded-full border border-slate-900 bg-slate-900 px-3 py-1 font-semibold text-white dark:border-teal-300 dark:bg-teal-500/20 dark:text-teal-50">
+              <span className="rounded-full px-3 py-1 font-semibold text-slate-900 dark:text-teal-200">
                 Viewing {selectedCountryName}
               </span>
             ) : null}
