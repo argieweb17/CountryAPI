@@ -7,11 +7,7 @@ function Header({ theme, onToggleTheme }) {
       <div className="pointer-events-none absolute -left-12 bottom-0 h-36 w-36 rounded-full bg-sky-100/50 blur-2xl dark:bg-sky-800/20" />
 
       <div className="relative mx-auto max-w-6xl px-4 py-7 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <p className="inline-flex rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 shadow-sm dark:border-slate-700 dark:bg-slate-800/75 dark:text-slate-300">
-            Country Intelligence Dashboard
-          </p>
-
+        <div className="flex flex-wrap items-start justify-end gap-3">
           <button
             type="button"
             onClick={onToggleTheme}

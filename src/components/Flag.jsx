@@ -1,14 +1,14 @@
 function Flag({ src, name }) {
   if (!src) {
     return (
-      <div className="flex aspect-[16/10] w-full items-center justify-center rounded-2xl border border-slate-200 bg-slate-100 text-sm font-medium text-slate-500">
+      <div className="flex aspect-[16/10] w-full items-center justify-center rounded-2xl border border-slate-200 bg-slate-100 text-sm font-medium text-slate-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400">
         No flag available
       </div>
     )
   }
 
   return (
-    <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
       <img
         src={src}
         alt={`${name} flag`}

@@ -9,7 +9,7 @@ function AnimatedNumber({ value, duration = 700, formatter }) {
 
   useEffect(() => {
     if (typeof value !== 'number') {
-      setDisplayValue(null)
+      previousValueRef.current = 0
       return () => {}
     }
 
@@ -17,7 +17,7 @@ function AnimatedNumber({ value, duration = 700, formatter }) {
     const delta = value - startValue
 
     if (delta === 0) {
-      setDisplayValue(value)
+      previousValueRef.current = value
       return () => {}
     }
 
